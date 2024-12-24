@@ -1,12 +1,21 @@
-function App() {
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import HomePage from "./pages/HomePage";
+import Jobs from "./pages/Jobs";
+import JobDetails from "./pages/JobDetails";
 
+
+function App() {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline bg-red-600">
-      Hello world!
-    </h1>
-    </>
-  )
+    <div>
+      <Navbar />
+    <Routes>
+        <Route path="/" element={<HomePage/>} />
+        <Route path="/jobs" element={<Jobs/>} />
+        <Route path="/jobdetails/:id" element={<JobDetails/>} />
+    </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;
